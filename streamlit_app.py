@@ -25,6 +25,8 @@ st.set_page_config(layout="wide")
 
 # Set shared sidebar
 st.sidebar.markdown("## Shared Sidebar")
+N = st.sidebar.slider("N", 0, 100, 50)
+st.session_state.N = N
 split_size = st.sidebar.slider('Rasio Pembagian Data (% Untuk Data Latih)', 10, 90, 80, 5)
 st.session_state.split_size = split_size
 jumlah_fitur = st.sidebar.slider('jumlah pilihan fitur (Untuk Data Latih)', 5, 47, 20, 5)
