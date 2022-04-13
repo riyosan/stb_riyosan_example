@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit_book as stb
 # import streamlit as st
 import numpy as np
-import pandas as pd
+# import pandas as pd
 import pyarrow as pa
 import seaborn as sns
 import matplotlib.pyplot as plt
