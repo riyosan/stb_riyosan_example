@@ -35,6 +35,7 @@ parameter_n_estimators = st.sidebar.slider('Number of estimators (n_estimators)'
 st.session_state.parameter_n_estimators = parameter_n_estimators
 tetangga = st.sidebar.slider('Jumlah K (KNN)', 11, 101, 55, 11)
 st.session_state.tetangga = tetangga
+dataset = st.sidebar.file_uploader("Unggah File CSV", type=['csv'])
 # Set multipage
 save_answers = False
 stb.set_chapter_config(path="pages/",
