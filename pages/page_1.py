@@ -100,49 +100,37 @@ if load:
   container = st.columns((1.9, 1.1))
   df_types = df.dtypes.astype(str)
 
-with container[0]:
-  st.write(df)
-  st.markdown('''
-  Merevisi kolom numscreens''')
-  # st.text('Merevisi kolom numscreens')
-with container[1]:
-  st.write(df_types)
-  st.markdown('''
-  Merevisi kolom numscreens''')
-  # st.text('Tipe data setiap kolom')
-    
-df1=preprocessing1()
-container1 = st.columns((1.9, 1.1))
-df1_types = df1.dtypes.astype(str)
-with container1[0]:
-  st.write(df1)
-  st.text('Merevisi kolom hour')
-with container1[1]:
-  st.write(df1_types)
-  st.text('Tipe data setiap kolom')
+  with container[0]:
+    st.write(df)
+    st.markdown('''
+    Merevisi kolom numscreens''')
+    # st.text('Merevisi kolom numscreens')
+  with container[1]:
+    st.write(df_types)
+    st.markdown('''
+    Merevisi kolom numscreens''')
+    # st.text('Tipe data setiap kolom')
 
-df4=preprocessing2()
-st.write(df4)
-st.text('Mengubah isi screen_list menjadi kolom baru')
+  df1=preprocessing1()
+  container1 = st.columns((1.9, 1.1))
+  df1_types = df1.dtypes.astype(str)
+  with container1[0]:
+    st.write(df1)
+    st.text('Merevisi kolom hour')
+  with container1[1]:
+    st.write(df1_types)
+    st.text('Tipe data setiap kolom')
 
-df_numerik, mutuals = funneling()
-st.write(df_numerik)
-#membuat plot korelasi tiap kolom dengan enrolled
-# korelasi = df_numerik.drop(columns=['enrolled'], inplace=False).corrwith(df_numerik.enrolled)
-# plot=korelasi.plot.bar(title='korelasi variabel')
-# st.set_option('deprecation.showPyplotGlobalUse', False)
-# st.pyplot()
-# st.text('Membuat plot korelasi tiap koklom terhadap kelasnya(enrolled)')
-# from sklearn.feature_selection import mutual_info_classif
-# #determine the mutual information
-# mutual_info = mutual_info_classif(df_numerik.drop(columns=['enrolled']), df_numerik.enrolled)
-# mutual_info = pd.Series(mutual_info)
-# mutual_info.index = df_numerik.drop(columns=['enrolled']).columns
-# mutual_info.sort_values(ascending=False)
-mutuals.plot.bar(title='urutannya')
-st.set_option('deprecation.showPyplotGlobalUse', False)
-st.pyplot()
-st.text('mengurutkan korelasi setiap kolom terhadap kelasnya(enrolled)')
+  df4=preprocessing2()
+  st.write(df4)
+  st.text('Mengubah isi screen_list menjadi kolom baru')
+
+  df_numerik, mutuals = funneling()
+  st.write(df_numerik)
+  mutuals.plot.bar(title='urutannya')
+  st.set_option('deprecation.showPyplotGlobalUse', False)
+  st.pyplot()
+  st.text('mengurutkan korelasi setiap kolom terhadap kelasnya(enrolled)')
 
 
 
