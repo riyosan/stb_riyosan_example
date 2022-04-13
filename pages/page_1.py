@@ -1,4 +1,4 @@
-# import pandas as pd
+import pandas
 @st.experimental_memo
 def load_datasets(dataset):
   df = pandas.read_csv(dataset)
