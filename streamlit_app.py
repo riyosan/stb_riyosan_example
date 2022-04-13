@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import pyarrow as pa
 import seaborn as sns
-from apps.praproses import preprocessing2
+# from apps.praproses import preprocessing2
 import os
 from dateutil import parser
 import joblib
