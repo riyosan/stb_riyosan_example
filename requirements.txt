@@ -3,7 +3,7 @@ streamlit_book
 joblib
 matplotlib
 numpy
-pandas==1.4.2
+pandas
 Pillow
 pyarrow
 python_dateutil
