@@ -1,7 +1,7 @@
 # import pandas as pd
 @st.experimental_memo
 def load_datasets(dataset):
-  df = pd.read_csv(dataset)
+  df = pandas.read_csv(dataset)
   return df
 
 @st.experimental_memo
