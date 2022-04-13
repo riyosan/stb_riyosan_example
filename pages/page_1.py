@@ -1,9 +1,4 @@
 @st.experimental_memo
-def load_dataset():
-  df = pd.read_csv('data/fintech_data.csv')
-  return df
-
-@st.experimental_memo
 def load_datasets(dataset):
   df = pd.read_csv(dataset)
   return df
@@ -87,50 +82,10 @@ def funneling():
   mutuals = mutual_info.sort_values(ascending=False)
   return df_numerik, mutuals
 
-with st.sidebar.header('1. Load Dataset'):
-  # st.text('Atau:\n ')
-  # st.text('Load Dataset:\n ')
-  load = st.sidebar.button('Press to use Example Dataset')
-
-if load:
-  df=pd.read_csv('data/fintech_data.csv')
+dataset = st.session_state.dataset
+if dataset is not None:
+  df=load_datasets(dataset)
   st.dataframe(df)
-  st.write(load_dataset())
-  df=preprocessing()
-  container = st.columns((1.9, 1.1))
-  df_types = df.dtypes.astype(str)
-
-  with container[0]:
-    st.write(df)
-    st.markdown('''
-    Merevisi kolom numscreens''')
-    # st.text('Merevisi kolom numscreens')
-  with container[1]:
-    st.write(df_types)
-    st.markdown('''
-    Merevisi kolom numscreens''')
-    # st.text('Tipe data setiap kolom')
-
-  df1=preprocessing1()
-  container1 = st.columns((1.9, 1.1))
-  df1_types = df1.dtypes.astype(str)
-  with container1[0]:
-    st.write(df1)
-    st.text('Merevisi kolom hour')
-  with container1[1]:
-    st.write(df1_types)
-    st.text('Tipe data setiap kolom')
-
-  df4=preprocessing2()
-  st.write(df4)
-  st.text('Mengubah isi screen_list menjadi kolom baru')
-
-  df_numerik, mutuals = funneling()
-  st.write(df_numerik)
-  mutuals.plot.bar(title='urutannya')
-  st.set_option('deprecation.showPyplotGlobalUse', False)
-  st.pyplot()
-  st.text('mengurutkan korelasi setiap kolom terhadap kelasnya(enrolled)')
 
 
 
